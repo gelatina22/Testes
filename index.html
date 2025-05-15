@@ -1,29 +1,139 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <title>teste testando</title>
-<style>
-<body>{
-    background-color: purple;
-font-family: Arial, sans-serif;
-font-size: 32px;
-}
-</style>
+  <meta charset="UTF-8" />
+  <title>Site para Minha Amante 💖</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #ffe6f0;
+      color: #333;
+      text-align: center;
+      padding: 20px;
+    }
+    header {
+      margin-bottom: 30px;
+    }
+    button {
+      background-color: #ff4d94;
+      border: none;
+      color: white;
+      padding: 15px 25px;
+      font-size: 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin: 10px;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #e03e85;
+    }
+    #heartBtn {
+      font-size: 24px;
+      transition: font-size 0.3s ease;
+      margin-top: 20px;
+    }
+    input {
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 2px solid #ff4d94;
+      margin-right: 10px;
+      width: 200px;
+      text-align: center;
+    }
+    #secretMsg {
+      display: none;
+      color: purple;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+  </style>
 </head>
-</body>
-<h1> Teste Visual</h1>
-<p>Olah o fundo roxo e o texto grande!<p/>
+<body>
 
-   
-    <h1>Bem-vinda</h1>
-    <button onclick="DizerOI()">Clique aqui</button>
+  <header>
+    <h1>testando conhecimento de todas amantes 💜</h1>
+    <p>Prepare-se para surpresas e brincadeiras</p>
+  </header>
 
-    <script>
-        function DizerOI() {
-            alert("Oi! Rebeka te amo. ");
-        }
-</script>    
+  <!-- Botão pergunta 1 -->
+  <button onclick="pergunta1()">Quem é meu cantor favorito?</button>
+
+  <!-- Botão pergunta 2 -->
+  <button onclick="pergunta2()">Qual é meu filme preferido?</button>
+
+  <!-- Quiz com 2 perguntas -->
+  <button onclick="quiz()">Vamos fazer um quiz rápido?</button>
+
+  <br /><br />
+
+  <!-- Palavra mágica -->
+  <input type="text" id="magicWord" placeholder="aperta os botão (lá ele)" />
+  <button onclick="mostrarMensagem()">Mostrar mensagem</button>
+  <p id="secretMsg">Eu te amo muito, minhas lindas!</p>
+
+  <!-- Botão coração que cresce -->
+  <br />
+  <button id="heartBtn" onclick="aumentarCoração()">❤️</button>
+
+  <script>
+    // Pergunta 1
+    function pergunta1() {
+      const resposta = prompt("Quem é meu cantor favorito?");
+      if (resposta && resposta.toLowerCase() === "doja cat") {
+        alert("Você acertou! Amo ela!");
+      } else {
+        alert("Quase! É o Doja cão.");
+      }
+    }
+
+    // Pergunta 2
+    function pergunta2() {
+      const resposta = prompt("Qual é meu filme preferido?");
+      if (resposta && resposta.toLowerCase() === "chucky") {
+        alert("Isso mesmo! Adoro 'chucky'.");
+      } else {
+        alert("DIVORCIO!");
+      }
+    }
+
+    // Quiz com 2 perguntas
+    function quiz() {
+      let score = 0;
+      const q1 = prompt("Qual meu apelido para você?");
+      if (q1 && (q1.toLowerCase().includes("princesa") || q1.toLowerCase().includes("amor"))) score++;
+
+      const q2 = prompt("Qual é o meu estilo de música favorita?");
+      if (q2 && (q2.toLowerCase().includes("trap") || q2.toLowerCase().includes("amor"))) score++;
+
+      alert("Você acertou " + score + " de 2 perguntas!");
+    }
+
+    // Palavra mágica
+    function mostrarMensagem() {
+      const word = document.getElementById("magicWord").value.toLowerCase();
+      if(word === "amor") {
+        document.getElementById("secretMsg").style.display = "block";
+      } else {
+        alert("Palavra errada, tente de novo!");
+      }
+    }
+
+    // Botão coração que cresce
+    let tamanho = 24;
+    function aumentarCoração() {
+      tamanho += 10;
+      const btn = document.getElementById("heartBtn");
+      btn.style.fontSize = tamanho + "px";
+
+      if (tamanho > 100) {
+        alert("Meu amor por você é gigante! IGUAL SUA BUNDA 💖");
+        tamanho = 24;
+        btn.style.fontSize = tamanho + "px";
+      }
+    }
+  </script>
+
 </body>
 </html>
-
